@@ -1,0 +1,8 @@
+<p><%= @name.capitalize %>'s Details</p>
+<p>Email: <%= @email %></p>
+<p>Interests: <%= @interests %></p>
+
+<h4>Other Users</h4>
+<% @users.select{ |u| u.to_s != @name }.each do |user| %>
+<p><a href="/users/<%= user %>"><%= user %></a></p>
+<% end %>
